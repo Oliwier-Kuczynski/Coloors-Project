@@ -43,9 +43,9 @@ function randomColors() {
     const saturation = sliders[2];
 
     colorizeSliders(color, hue, brightness, saturation);
-    //Reset input
-    resetInputs();
   });
+  //Reset input
+  resetInputs();
 }
 
 function checkTextContrast(color, text) {
@@ -116,7 +116,7 @@ function resetInputs() {
   sliders.forEach((slider) => {
     if (slider.name === "hue") {
       const hueColor = initialColors[slider.getAttribute("data-hue")];
-      const hueValue = chroma(hueColor)[0];
+      const hueValue = chroma(hueColor).hsl()[0];
       slider.value = Math.floor(hueValue);
     }
   });
